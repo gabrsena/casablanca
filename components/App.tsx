@@ -663,7 +663,7 @@ const App = () => {
           <div className="hero-text fade-in-section">
             <h1>{t.heroTitle}</h1>
             <p>{t.heroSub}</p>
-            <p style={{ fontSize: '14px', color: '#9CA3AF', marginTop: '12px', marginBottom: '24px' }}>
+            <p className="hero-trust-line" style={{ fontSize: '14px', color: '#9CA3AF', marginTop: '12px', marginBottom: '24px' }}>
               {t.heroTrustLine}
             </p>
             <div className="hero-buttons">
@@ -679,7 +679,7 @@ const App = () => {
               >
                 {t.heroBtnPrimary}
               </a>
-              <button className="btn-text" onClick={() => scrollToSection('features')}>
+              <button className="btn-text hero-scroll-btn" onClick={() => scrollToSection('features')}>
                 {t.heroBtnSecondary} <ArrowIcon />
               </button>
             </div>
@@ -1097,11 +1097,6 @@ const App = () => {
           <WhatsAppIcon />
         </a>
       )}
-      
-      {/* FIXED ROBOT */}
-      <div className={`fixed-robot ${!isHeroVisible ? 'visible' : ''}`}>
-        <RobotPointSVG />
-      </div>
     </div>
   );
 };

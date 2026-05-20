@@ -1049,12 +1049,16 @@ const App = () => {
           </video>
         </div>
 
-        <div className="cta-container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <h2>{t.formTitle}</h2>
-          <p style={{ color: '#E5E7EB', fontSize: '18px', marginBottom: '32px', maxWidth: '600px', lineHeight: '1.5' }}>
+        <div className="cta-container-premium" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="cta-status-badge">
+            <span className="pulse-dot"></span>
+            <span>{lang === 'en' ? 'Online Coordination' : 'Coordinación Online'}</span>
+          </div>
+          <h2 className="cta-title-premium">{t.formTitle}</h2>
+          <p className="cta-subtitle-premium">
             {lang === 'en' 
-              ? 'Click below to talk directly with one of our team members on WhatsApp and get started.' 
-              : 'Haz clic a continuación para hablar directamente con uno de nuestros colaboradores por WhatsApp y empezar.'}
+              ? 'Connect directly with our local team on WhatsApp. No forms, no wait times—just immediate support to coordinate your property care.' 
+              : 'Conecta directamente con nuestro equipo local por WhatsApp. Sin formularios, sin tiempos de espera: soporte inmediato para coordinar el cuidado de tu propiedad.'}
           </p>
           <a 
             href={
@@ -1064,11 +1068,14 @@ const App = () => {
             }
             target="_blank"
             rel="noreferrer"
-            className="btn-primary"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 32px', fontSize: '16px' }}
+            className="btn-whatsapp-premium"
           >
-            {lang === 'en' ? 'Talk to a Collaborator' : 'Hablar con un Colaborador'} <ArrowIcon />
+            <WhatsAppIcon />
+            <span>{lang === 'en' ? 'Chat with our Team' : 'Conversar con nuestro Equipo'}</span>
           </a>
+          <div className="cta-response-time">
+            <span>{lang === 'en' ? 'Average response time: < 5 minutes' : 'Tiempo medio de respuesta: < 5 minutos'}</span>
+          </div>
         </div>
       </section>
 

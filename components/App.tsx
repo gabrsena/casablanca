@@ -574,38 +574,6 @@ const App = () => {
     return () => clearInterval(interval);
   }, [cycleCount]);
 
-  const handleWhatsAppSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get('name') as string;
-    const whatsappNumField = formData.get('whatsapp') as string;
-    const location = formData.get('location') as string;
-    const propertyType = formData.get('propertyType') as string;
-    const bedrooms = formData.get('bedrooms') as string;
-    const services = formData.get('services') as string;
-    
-    let message = "";
-    if (lang === 'en') {
-      message = `Hi! I'm interested in Airbnb turnover / property care in Costa Blanca.
-- Name: ${name}
-- WhatsApp: ${whatsappNumField}
-- Property Location: ${location}
-- Property Type: ${propertyType}
-- Bedrooms: ${bedrooms}
-- Services Needed: ${services}`;
-    } else {
-      message = `¡Hola! Estoy interesado en limpieza de Airbnb / cuidado de propiedades en la Costa Blanca.
-- Nombre: ${name}
-- WhatsApp: ${whatsappNumField}
-- Ubicación: ${location}
-- Tipo de Propiedad: ${propertyType}
-- Dormitorios: ${bedrooms}
-- Servicios Necesarios: ${services}`;
-    }
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000'}?text=${encodedMessage}`, '_blank');
-  };
-
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -1072,33 +1040,6 @@ const App = () => {
         </div>
       </section>
 
-      {/* TRUST BADGES ROW */}
-      <div className="badges-container fade-in-section">
-        {(lang === 'en'
-          ? [
-              "Photo reports after every turnover",
-              "Checklist-based cleaning",
-              "English-speaking support",
-              "Local Costa Blanca team",
-              "Laundry & restocking available",
-              "Ideal for owners living abroad"
-            ]
-          : [
-              "Informes fotográficos tras cada cambio",
-              "Limpieza basada en listas",
-              "Soporte en inglés y español",
-              "Equipo local en la Costa Blanca",
-              "Lavandería y reposición disponibles",
-              "Ideal para propietarios en el extranjero"
-            ]
-        ).map((badge, idx) => (
-          <div className="badge-pill" key={idx}>
-            <span className="badge-pill-icon"><CheckIcon /></span>
-            <span>{badge}</span>
-          </div>
-        ))}
-      </div>
-
       {/* LEAD FORM / CTA SECTION */}
       <section id="contact" className="section cta-section fade-in-section" style={{ position: 'relative', overflow: 'hidden' }}>
         {/* BACKGROUND VIDEO */}
@@ -1108,45 +1049,26 @@ const App = () => {
           </video>
         </div>
 
-        <div className="cta-container" style={{ position: 'relative', zIndex: 1 }}>
+        <div className="cta-container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <h2>{t.formTitle}</h2>
-          <form className="cta-form" onSubmit={handleWhatsAppSubmit}>
-            <div className="form-row" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
-              <input type="text" name="name" placeholder={t.formName} required />
-              <input type="tel" name="whatsapp" placeholder={t.formPhone} required />
-              <input 
-                type="text" 
-                name="location" 
-                placeholder={lang === 'en' ? "e.g. Javea, Calpe, Denia..." : "ej. Javea, Calpe, Denia..."} 
-                required 
-              />
-              <select name="propertyType" required defaultValue="">
-                <option value="" disabled>{lang === 'en' ? "Property Type" : "Tipo de Propiedad"}</option>
-                <option value="Villa">{lang === 'en' ? "Villa" : "Villa"}</option>
-                <option value="Apartment">{lang === 'en' ? "Apartment" : "Apartamento"}</option>
-                <option value="Townhouse">{lang === 'en' ? "Townhouse" : "Adosado"}</option>
-                <option value="Other">{lang === 'en' ? "Other" : "Otro"}</option>
-              </select>
-              <select name="bedrooms" required defaultValue="">
-                <option value="" disabled>{lang === 'en' ? "Bedrooms" : "Dormitorios"}</option>
-                <option value="1">{lang === 'en' ? "1 bedroom" : "1 dormitorio"}</option>
-                <option value="2">{lang === 'en' ? "2 bedrooms" : "2 dormitorios"}</option>
-                <option value="3">{lang === 'en' ? "3 bedrooms" : "3 dormitorios"}</option>
-                <option value="4">{lang === 'en' ? "4 bedrooms" : "4 dormitorios"}</option>
-                <option value="5+">{lang === 'en' ? "5+ bedrooms" : "5+ dormitorios"}</option>
-              </select>
-              <select name="services" required defaultValue="">
-                <option value="" disabled>{lang === 'en' ? "Services Needed" : "Servicios Necesarios"}</option>
-                <option value="Turnover Only">{lang === 'en' ? "Turnover Only" : "Solo Limpieza"}</option>
-                <option value="Airbnb Care">{lang === 'en' ? "Airbnb Care" : "Airbnb Care"}</option>
-                <option value="Full Property Care">{lang === 'en' ? "Full Property Care" : "Cuidado Completo"}</option>
-                <option value="Not sure yet">{lang === 'en' ? "Not sure yet" : "Aún no lo sé"}</option>
-              </select>
-            </div>
-            <button type="submit" className="btn-primary btn-submit">
-              {t.formSubmit} <ArrowIcon />
-            </button>
-          </form>
+          <p style={{ color: '#E5E7EB', fontSize: '18px', marginBottom: '32px', maxWidth: '600px', lineHeight: '1.5' }}>
+            {lang === 'en' 
+              ? 'Click below to talk directly with one of our team members on WhatsApp and get started.' 
+              : 'Haz clic a continuación para hablar directamente con uno de nuestros colaboradores por WhatsApp y empezar.'}
+          </p>
+          <a 
+            href={
+              lang === 'en'
+                ? `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000'}?text=Hi!+I%27d+like+to+talk+to+someone+about+managing+my+property+in+Costa+Blanca.`
+                : `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000'}?text=%C2%A1Hola!+Me+gustar%C3%ADa+hablar+con+alguien+para+gestionar+mi+propiedad+en+la+Costa+Blanca.`
+            }
+            target="_blank"
+            rel="noreferrer"
+            className="btn-primary"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 32px', fontSize: '16px' }}
+          >
+            {lang === 'en' ? 'Talk to a Collaborator' : 'Hablar con un Colaborador'} <ArrowIcon />
+          </a>
         </div>
       </section>
 

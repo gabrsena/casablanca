@@ -209,6 +209,7 @@ interface Translation {
   navContact: string;
   heroTitle: React.ReactNode;
   heroSub: string;
+  heroTrustLine: string;
   heroBtnPrimary: string;
   heroBtnSecondary: string;
   robotSpeech: string;
@@ -240,14 +241,18 @@ interface Translation {
   mockupDone: string;
   testiTitle: string;
   testimonials: Testimonial[];
+  stat1Number: string;
   stat1Label: string;
+  stat2Number: string;
   stat2Label: string;
+  stat3Number: string;
   stat3Label: string;
+  stat4Number: string;
   stat4Label: string;
   aboutLabel: string;
   aboutTitle: string;
-  aboutP1: string;
-  aboutP2: string;
+  aboutText: string;
+  aboutSubline: string;
   formTitle: string;
   formName: string;
   formPhone: string;
@@ -267,10 +272,11 @@ const translations: Record<'en' | 'es', Translation> = {
     navServices: "Services",
     navAbout: "About",
     navContact: "Contact",
-    heroTitle: <>Your Costa Blanca property, <span className="text-gradient">always ready.</span></>,
-    heroSub: "Professional cleaning and full management for Airbnb hosts and vacation homeowners. Trusted since 2017.",
-    heroBtnPrimary: "Talk to us on WhatsApp",
-    heroBtnSecondary: "See our services",
+    heroTitle: <>Your Costa Blanca property, <span className="text-gradient">always guest-ready.</span></>,
+    heroSub: "Reliable Airbnb turnover, laundry coordination and property care for international owners who need a trusted local team.",
+    heroTrustLine: "U.S. service experience since 2017. Now serving property owners across Costa Blanca.",
+    heroBtnPrimary: "Get a Quote on WhatsApp",
+    heroBtnSecondary: "View Services",
     robotSpeech: "Hi! We handle 5-star cleaning, maintenance, and check-ins so you don't have to.",
     badgeRobot: "Smart Host",
     badgeStatusClean: "Clean ✓",
@@ -319,14 +325,18 @@ const translations: Record<'en' | 'es', Translation> = {
         avatar: "/ElenaR.png"
       }
     ],
-    stat1Label: "Founded",
-    stat2Label: "Properties Managed",
-    stat3Label: "Costa Blanca Support",
-    stat4Label: "Response Time",
+    stat1Number: "Since 2017",
+    stat1Label: "U.S. Experience",
+    stat2Number: "Checklist-Based",
+    stat2Label: "Every Turnover",
+    stat3Number: "Local Team",
+    stat3Label: "Costa Blanca",
+    stat4Number: "WhatsApp",
+    stat4Label: "Fast Response",
     aboutLabel: "ABOUT US",
     aboutTitle: "From Orlando to the Costa Blanca.",
-    aboutP1: "Founded in 2017, we began our journey managing high-demand vacation rentals in Orlando, Florida. We learned exactly what it takes to deliver 5-star experiences at scale.",
-    aboutP2: "Now based entirely on the Costa Blanca, we bring that same American standard of excellence to your property. We are a locally-operated team with international experience, dedicated exclusively to ensuring your vacation home is always guest-ready.",
+    aboutText: "Since 2017, our background in property services in the United States taught us the importance of punctuality, communication and attention to detail. Today, we bring that same operational standard to holiday homeowners and Airbnb hosts across the Costa Blanca.",
+    aboutSubline: "Built on U.S. service standards. Operated locally in Costa Blanca.",
     formTitle: "Ready to hand off your property?",
     formName: "Your Name",
     formPhone: "WhatsApp Number",
@@ -344,10 +354,11 @@ const translations: Record<'en' | 'es', Translation> = {
     navServices: "Servicios",
     navAbout: "Nosotros",
     navContact: "Contacto",
-    heroTitle: <>Tu propiedad en la Costa Blanca, <span className="text-gradient">siempre lista.</span></>,
-    heroSub: "Limpieza profesional y gestión integral para anfitriones de Airbnb y propietarios de viviendas vacacionales. Confianza desde 2017.",
-    heroBtnPrimary: "Hablemos por WhatsApp",
-    heroBtnSecondary: "Ver nuestros servicios",
+    heroTitle: <>Tu propiedad en la Costa Blanca, <span className="text-gradient">siempre lista para huéspedes.</span></>,
+    heroSub: "Limpieza fiable de Airbnb, coordinación de lavandería y cuidado de propiedades para propietarios internacionales que necesitan un equipo local de confianza.",
+    heroTrustLine: "Experiencia en servicio de EE. UU. desde 2017. Ahora sirviendo a propietarios en toda la Costa Blanca.",
+    heroBtnPrimary: "Obtén un presupuesto en WhatsApp",
+    heroBtnSecondary: "Ver Servicios",
     robotSpeech: "¡Hola! Gestionamos limpieza 5 estrellas, mantenimiento y check-ins para que no tengas que hacerlo.",
     badgeRobot: "Anfitrión Inteligente",
     badgeStatusClean: "Limpio ✓",
@@ -396,14 +407,18 @@ const translations: Record<'en' | 'es', Translation> = {
         avatar: "/ElenaR.png"
       }
     ],
-    stat1Label: "Fundada",
-    stat2Label: "Propiedades Gestionadas",
-    stat3Label: "Soporte Costa Blanca",
-    stat4Label: "Tiempo de Respuesta",
+    stat1Number: "Desde 2017",
+    stat1Label: "Experiencia en EE.UU.",
+    stat2Number: "Basado en Lista",
+    stat2Label: "Cada Limpieza",
+    stat3Number: "Equipo Local",
+    stat3Label: "Costa Blanca",
+    stat4Number: "WhatsApp",
+    stat4Label: "Respuesta Rápida",
     aboutLabel: "SOBRE NOSOTROS",
     aboutTitle: "Desde Orlando hasta la Costa Blanca.",
-    aboutP1: "Fundada en 2017, comenzamos nuestra trayectoria gestionando alquileres vacacionales de alta demanda en Orlando, Florida. Aprendimos exactamente lo que se necesita para ofrecer experiencias de 5 estrellas a gran escala.",
-    aboutP2: "Ahora ubicados por completo en la Costa Blanca, traemos ese mismo estándar americano de excelencia a tu propiedad. Somos un equipo operado localmente con experiencia internacional, dedicados exclusivamente a garantizar que tu casa vacacional esté siempre lista para los huéspedes.",
+    aboutText: "Desde 2017, nuestra trayectoria en servicios de propiedad en los Estados Unidos nos enseñó la importancia de la puntualidad, la comunicación y la atención al detalle. Hoy traemos ese mismo estándar operativo a los propietarios de viviendas vacacionales y anfitriones de Airbnb en toda la Costa Blanca.",
+    aboutSubline: "Basado en estándares de servicio de EE. UU. Operado localmente en la Costa Blanca.",
     formTitle: "¿Listo para dejarnos tu propriedade en buenas manos?",
     formName: "Tu Nombre",
     formPhone: "Número de WhatsApp",
@@ -563,16 +578,32 @@ const App = () => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const name = formData.get('name') as string;
+    const whatsappNumField = formData.get('whatsapp') as string;
+    const location = formData.get('location') as string;
     const propertyType = formData.get('propertyType') as string;
+    const bedrooms = formData.get('bedrooms') as string;
+    const services = formData.get('services') as string;
     
-    let message = t.waMessage;
-    if (name && propertyType) {
-      message = lang === 'en' 
-        ? `Hi! I'm ${name} and I need help managing my ${propertyType} in Costa Blanca.`
-        : `¡Hola! Soy ${name} y necesito ayuda para gestionar mi ${propertyType} en la Costa Blanca.`;
+    let message = "";
+    if (lang === 'en') {
+      message = `Hi! I'm interested in Airbnb turnover / property care in Costa Blanca.
+- Name: ${name}
+- WhatsApp: ${whatsappNumField}
+- Property Location: ${location}
+- Property Type: ${propertyType}
+- Bedrooms: ${bedrooms}
+- Services Needed: ${services}`;
+    } else {
+      message = `¡Hola! Estoy interesado en limpieza de Airbnb / cuidado de propiedades en la Costa Blanca.
+- Nombre: ${name}
+- WhatsApp: ${whatsappNumField}
+- Ubicación: ${location}
+- Tipo de Propiedad: ${propertyType}
+- Dormitorios: ${bedrooms}
+- Servicios Necesarios: ${services}`;
     }
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000'}?text=${encodedMessage}`, '_blank');
   };
 
   const scrollToSection = (id: string) => {
@@ -664,8 +695,20 @@ const App = () => {
           <div className="hero-text fade-in-section">
             <h1>{t.heroTitle}</h1>
             <p>{t.heroSub}</p>
+            <p style={{ fontSize: '14px', color: '#9CA3AF', marginTop: '12px', marginBottom: '24px' }}>
+              {t.heroTrustLine}
+            </p>
             <div className="hero-buttons">
-              <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer" className="btn-primary">
+              <a 
+                href={
+                  lang === 'en'
+                    ? `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000'}?text=Hi%2C+I%27m+interested+in+Airbnb+turnover+%2F+property+care+in+Costa+Blanca.+My+property+is+located+in+`
+                    : `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000'}?text=Hola%2C+estoy+interesado+en+limpieza+de+Airbnb+%2F+cuidado+de+propiedades+en+la+Costa+Blanca.+Mi+propiedad+est%C3%A1+ubicada+en+`
+                } 
+                target="_blank" 
+                rel="noreferrer" 
+                className="btn-primary"
+              >
                 {t.heroBtnPrimary}
               </a>
               <button className="btn-text" onClick={() => scrollToSection('features')}>
@@ -815,30 +858,164 @@ const App = () => {
           <div className="stats-grid">
             <div className="stat-item">
               <div className="stat-number text-gradient">
-                2017
+                {t.stat1Number}
               </div>
               <div className="stat-label">{t.stat1Label}</div>
             </div>
             <div className="stat-item">
               <div className="stat-number text-gradient">
-                <AnimatedCounter end={100} suffix="+" />
+                {t.stat2Number}
               </div>
               <div className="stat-label">{t.stat2Label}</div>
             </div>
             <div className="stat-item">
               <div className="stat-number text-gradient">
-                <AnimatedCounter end={24} suffix="/7" />
+                {t.stat3Number}
               </div>
               <div className="stat-label">{t.stat3Label}</div>
             </div>
             <div className="stat-item">
               <div className="stat-number text-gradient">
-                <AnimatedCounter end={null} prefix="<" suffix="1h" />
+                {t.stat4Number}
               </div>
               <div className="stat-label">{t.stat4Label}</div>
             </div>
           </div>
         </div>
+
+        {/* HOW IT WORKS SECTION */}
+        <section className="how-it-works-section fade-in-section">
+          <div className="container">
+            <h2 className="section-headline">{lang === 'en' ? 'How it works' : 'Cómo funciona'}</h2>
+            <div className="how-it-works-grid">
+              <div className="how-step">
+                <span className="how-step-num">01</span>
+                <h4 className="how-step-title">
+                  {lang === 'en' ? 'Send your property details' : 'Envía los detalles de tu propiedad'}
+                </h4>
+                <p className="how-step-desc">
+                  {lang === 'en' ? 'Tell us your location, number of rooms and rental platform.' : 'Cuéntanos tu ubicación, número de habitaciones y plataforma de alquiler.'}
+                </p>
+              </div>
+              <div className="how-step">
+                <span className="how-step-num">02</span>
+                <h4 className="how-step-title">
+                  {lang === 'en' ? 'We build your checklist' : 'Creamos tu lista de verificación'}
+                </h4>
+                <p className="how-step-desc">
+                  {lang === 'en' ? 'We create a custom turnover checklist for your property.' : 'Creamos una lista de verificación personalizada para tu propiedad.'}
+                </p>
+              </div>
+              <div className="how-step">
+                <span className="how-step-num">03</span>
+                <h4 className="how-step-title">
+                  {lang === 'en' ? 'We handle cleaning, laundry & restocking' : 'Nos encargamos de limpieza, lavandería y reposición'}
+                </h4>
+                <p className="how-step-desc">
+                  {lang === 'en' ? 'Our local team coordinates every visit, every time.' : 'Nuestro equipo local coordina cada visita, cada vez.'}
+                </p>
+              </div>
+              <div className="how-step">
+                <span className="how-step-num">04</span>
+                <h4 className="how-step-title">
+                  {lang === 'en' ? 'You receive photo confirmation' : 'Recibes confirmación fotográfica'}
+                </h4>
+                <p className="how-step-desc">
+                  {lang === 'en' ? 'After each turnover you get a WhatsApp report with photos.' : 'Después de cada servicio recibes un informe por WhatsApp con fotos.'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CHOOSE YOUR SERVICE LEVEL (PACKAGES) SECTION */}
+        <section className="packages-section fade-in-section">
+          <div className="container">
+            <h2 className="section-headline">{lang === 'en' ? 'Choose your service level' : 'Elige tu nivel de servicio'}</h2>
+            <div className="packages-grid">
+              {/* Card 1 */}
+              <div className="package-card">
+                <h3 className="package-title">{lang === 'en' ? 'Turnover Only' : 'Solo Limpieza'}</h3>
+                <p className="package-desc">
+                  {lang === 'en' ? 'For hosts who need reliable guest-ready cleaning.' : 'Para anfitriones que necesitan una limpieza de cambio fiable.'}
+                </p>
+                <div className="package-divider"></div>
+                <div className="package-includes-title">{lang === 'en' ? 'Includes:' : 'Incluye:'}</div>
+                <ul className="package-features">
+                  <li><CheckIcon /> {lang === 'en' ? 'Post-guest cleaning' : 'Limpieza post-huésped'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Bed change' : 'Cambio de sábanas'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Bathroom & kitchen reset' : 'Desinfección de baño y cocina'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Photo confirmation' : 'Confirmación fotográfica'}</li>
+                </ul>
+                <a 
+                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000'}?text=${encodeURIComponent(lang === 'en' ? "Hi, I'm interested in the Turnover Only service for my property." : "Hola, estoy interesado en el servicio de Solo Limpieza para mi propiedad.")}`} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="btn-primary package-btn"
+                >
+                  {lang === 'en' ? 'Request on WhatsApp' : 'Solicitar en WhatsApp'}
+                </a>
+              </div>
+
+              {/* Card 2 - Highlighted */}
+              <div className="package-card highlighted">
+                <span className="package-badge">{lang === 'en' ? 'Most Popular' : 'Más Popular'}</span>
+                <h3 className="package-title">Airbnb Care</h3>
+                <p className="package-desc">
+                  {lang === 'en' ? 'For owners who want cleaning, laundry and restocking handled.' : 'Para propietarios que desean externalizar limpieza, lavandería y reposición.'}
+                </p>
+                <div className="package-divider"></div>
+                <div className="package-includes-title">{lang === 'en' ? 'Includes:' : 'Incluye:'}</div>
+                <ul className="package-features">
+                  <li><CheckIcon /> {lang === 'en' ? 'Everything in Turnover' : 'Todo lo de Solo Limpieza'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Laundry coordination' : 'Coordinación de lavandería'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Essentials restocking' : 'Reposición de esenciales'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Turnover checklist' : 'Lista de verificación'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'WhatsApp photo report' : 'Informe fotográfico por WhatsApp'}</li>
+                </ul>
+                <a 
+                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000'}?text=${encodeURIComponent(lang === 'en' ? "Hi, I'm interested in the Airbnb Care service for my property." : "Hola, estoy interesado en el servicio de Airbnb Care para mi propiedad.")}`} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="btn-primary package-btn"
+                >
+                  {lang === 'en' ? 'Request on WhatsApp' : 'Solicitar en WhatsApp'}
+                </a>
+              </div>
+
+              {/* Card 3 */}
+              <div className="package-card">
+                <h3 className="package-title">{lang === 'en' ? 'Full Property Care' : 'Cuidado Completo'}</h3>
+                <p className="package-desc">
+                  {lang === 'en' ? 'For international owners who are not on-site.' : 'Para propietarios internacionales que no están en la propiedad.'}
+                </p>
+                <div className="package-divider"></div>
+                <div className="package-includes-title">{lang === 'en' ? 'Includes:' : 'Incluye:'}</div>
+                <ul className="package-features">
+                  <li><CheckIcon /> {lang === 'en' ? 'Everything in Airbnb Care' : 'Todo lo de Airbnb Care'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Property inspections' : 'Inspección de propiedad'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Maintenance coordination' : 'Coordinación de mantenimiento'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Guest-ready checks' : 'Control de puesta a punto'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Monthly owner summary' : 'Resumen mensual de gestión'}</li>
+                </ul>
+                <a 
+                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000'}?text=${encodeURIComponent(lang === 'en' ? "Hi, I'm interested in the Full Property Care service for my property." : "Hola, estoy interesado en el servicio de Cuidado Completo para mi propiedad.")}`} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="btn-primary package-btn"
+                >
+                  {lang === 'en' ? 'Request on WhatsApp' : 'Solicitar en WhatsApp'}
+                </a>
+              </div>
+            </div>
+            
+            <p className="package-footer-text">
+              {lang === 'en' 
+                ? 'Custom pricing based on your property. Request a quote on WhatsApp.' 
+                : 'Precios personalizados según tu propiedad. Solicita un presupuesto por WhatsApp.'}
+            </p>
+          </div>
+        </section>
 
         {/* ABOUT US SECTION */}
         <div className="section about-section fade-in-section">
@@ -846,9 +1023,8 @@ const App = () => {
             <div className="about-text">
               <span className="ownership-label">{t.aboutLabel}</span>
               <h2 className="section-headline">{t.aboutTitle}</h2>
-              <p>{t.aboutP1}</p>
-              <br/>
-              <p>{t.aboutP2}</p>
+              <p>{t.aboutText}</p>
+              <p style={{ fontSize: '15px', color: '#1A56DB', fontWeight: '700', marginTop: '16px' }}>{t.aboutSubline}</p>
             </div>
             
             <div className="about-visual">
@@ -896,6 +1072,33 @@ const App = () => {
         </div>
       </section>
 
+      {/* TRUST BADGES ROW */}
+      <div className="badges-container fade-in-section">
+        {(lang === 'en'
+          ? [
+              "Photo reports after every turnover",
+              "Checklist-based cleaning",
+              "English-speaking support",
+              "Local Costa Blanca team",
+              "Laundry & restocking available",
+              "Ideal for owners living abroad"
+            ]
+          : [
+              "Informes fotográficos tras cada cambio",
+              "Limpieza basada en listas",
+              "Soporte en inglés y español",
+              "Equipo local en la Costa Blanca",
+              "Lavandería y reposición disponibles",
+              "Ideal para propietarios en el extranjero"
+            ]
+        ).map((badge, idx) => (
+          <div className="badge-pill" key={idx}>
+            <span className="badge-pill-icon"><CheckIcon /></span>
+            <span>{badge}</span>
+          </div>
+        ))}
+      </div>
+
       {/* LEAD FORM / CTA SECTION */}
       <section id="contact" className="section cta-section fade-in-section" style={{ position: 'relative', overflow: 'hidden' }}>
         {/* BACKGROUND VIDEO */}
@@ -908,14 +1111,36 @@ const App = () => {
         <div className="cta-container" style={{ position: 'relative', zIndex: 1 }}>
           <h2>{t.formTitle}</h2>
           <form className="cta-form" onSubmit={handleWhatsAppSubmit}>
-            <div className="form-row">
+            <div className="form-row" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
               <input type="text" name="name" placeholder={t.formName} required />
               <input type="tel" name="whatsapp" placeholder={t.formPhone} required />
+              <input 
+                type="text" 
+                name="location" 
+                placeholder={lang === 'en' ? "e.g. Javea, Calpe, Denia..." : "ej. Javea, Calpe, Denia..."} 
+                required 
+              />
               <select name="propertyType" required defaultValue="">
-                <option value="" disabled>{t.formType}</option>
-                <option value={t.formOpt1}>{t.formOpt1}</option>
-                <option value={t.formOpt2}>{t.formOpt2}</option>
-                <option value={t.formOpt3}>{t.formOpt3}</option>
+                <option value="" disabled>{lang === 'en' ? "Property Type" : "Tipo de Propiedad"}</option>
+                <option value="Villa">{lang === 'en' ? "Villa" : "Villa"}</option>
+                <option value="Apartment">{lang === 'en' ? "Apartment" : "Apartamento"}</option>
+                <option value="Townhouse">{lang === 'en' ? "Townhouse" : "Adosado"}</option>
+                <option value="Other">{lang === 'en' ? "Other" : "Otro"}</option>
+              </select>
+              <select name="bedrooms" required defaultValue="">
+                <option value="" disabled>{lang === 'en' ? "Bedrooms" : "Dormitorios"}</option>
+                <option value="1">{lang === 'en' ? "1 bedroom" : "1 dormitorio"}</option>
+                <option value="2">{lang === 'en' ? "2 bedrooms" : "2 dormitorios"}</option>
+                <option value="3">{lang === 'en' ? "3 bedrooms" : "3 dormitorios"}</option>
+                <option value="4">{lang === 'en' ? "4 bedrooms" : "4 dormitorios"}</option>
+                <option value="5+">{lang === 'en' ? "5+ bedrooms" : "5+ dormitorios"}</option>
+              </select>
+              <select name="services" required defaultValue="">
+                <option value="" disabled>{lang === 'en' ? "Services Needed" : "Servicios Necesarios"}</option>
+                <option value="Turnover Only">{lang === 'en' ? "Turnover Only" : "Solo Limpieza"}</option>
+                <option value="Airbnb Care">{lang === 'en' ? "Airbnb Care" : "Airbnb Care"}</option>
+                <option value="Full Property Care">{lang === 'en' ? "Full Property Care" : "Cuidado Completo"}</option>
+                <option value="Not sure yet">{lang === 'en' ? "Not sure yet" : "Aún no lo sé"}</option>
               </select>
             </div>
             <button type="submit" className="btn-primary btn-submit">

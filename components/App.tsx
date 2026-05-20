@@ -820,7 +820,7 @@ const App = () => {
       </section>
 
       {/* COMBINED ABOUT & STATS SECTION */}
-      <section id="about" className="about-wrapper">
+      <section className="about-wrapper">
 
 
         {/* HOW IT WORKS SECTION */}
@@ -958,7 +958,7 @@ const App = () => {
         </section>
 
         {/* ABOUT US SECTION */}
-        <div className="section about-section fade-in-section">
+        <div id="about" className="section about-section fade-in-section">
           <div className="container about-content">
             <div className="about-text">
               <span className="ownership-label">{t.aboutLabel}</span>

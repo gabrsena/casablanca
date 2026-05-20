@@ -821,35 +821,7 @@ const App = () => {
 
       {/* COMBINED ABOUT & STATS SECTION */}
       <section id="about" className="about-wrapper">
-        {/* STATS ROW */}
-        <div className="stats-section fade-in-section">
-          <div className="stats-grid">
-            <div className="stat-item">
-              <div className="stat-number text-gradient">
-                {t.stat1Number}
-              </div>
-              <div className="stat-label">{t.stat1Label}</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number text-gradient">
-                {t.stat2Number}
-              </div>
-              <div className="stat-label">{t.stat2Label}</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number text-gradient">
-                {t.stat3Number}
-              </div>
-              <div className="stat-label">{t.stat3Label}</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number text-gradient">
-                {t.stat4Number}
-              </div>
-              <div className="stat-label">{t.stat4Label}</div>
-            </div>
-          </div>
-        </div>
+
 
         {/* HOW IT WORKS SECTION */}
         <section className="how-it-works-section fade-in-section">
@@ -1050,10 +1022,7 @@ const App = () => {
         </div>
 
         <div className="cta-container-premium" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="cta-status-badge">
-            <span className="pulse-dot"></span>
-            <span>{lang === 'en' ? 'Online Coordination' : 'Coordinación Online'}</span>
-          </div>
+
           <h2 className="cta-title-premium">{t.formTitle}</h2>
           <p className="cta-subtitle-premium">
             {lang === 'en' 

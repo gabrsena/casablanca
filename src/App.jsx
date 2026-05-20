@@ -497,7 +497,7 @@ const App = () => {
         : `¡Hola! Soy ${name} y necesito ayuda para gestionar mi ${propertyType} en la Costa Blanca.`;
     }
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/34600000000?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
   };
 
   const scrollToSection = (id) => {
@@ -587,7 +587,7 @@ const App = () => {
             <h1>{t.heroTitle}</h1>
             <p>{t.heroSub}</p>
             <div className="hero-buttons">
-              <a href="https://wa.me/34600000000" target="_blank" rel="noreferrer" className="btn-primary">
+              <a href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer" className="btn-primary">
                 {t.heroBtnPrimary}
               </a>
               <button className="btn-text" onClick={() => scrollToSection('features')}>
@@ -867,7 +867,7 @@ const App = () => {
             <div className="footer-col">
               <h5>{t.navContact}</h5>
               <ul>
-                <li><a href="https://wa.me/34600000000">WhatsApp</a></li>
+                <li><a href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}`}>WhatsApp</a></li>
                 <li><a href="#">Email</a></li>
               </ul>
             </div>
@@ -889,7 +889,7 @@ const App = () => {
 
       {/* FLOATING WHATSAPP BUTTON */}
       {showWhatsApp && (
-        <a href="https://wa.me/34600000000" target="_blank" rel="noreferrer" className="floating-wa" aria-label="Chat on WhatsApp">
+        <a href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer" className="floating-wa" aria-label="Chat on WhatsApp">
           <WhatsAppIcon />
         </a>
       )}

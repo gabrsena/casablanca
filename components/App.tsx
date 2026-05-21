@@ -285,21 +285,21 @@ const translations: Record<'en' | 'es', Translation> = {
     trust2: "Experience from Orlando to Costa Blanca",
     trust3: "Local team on Costa Blanca",
     featuresTitle: "Everything your property needs, handled.",
-    tab1: "Post-rental Cleaning",
-    tab2: "Property Management",
-    tab3: "Owner Communication",
-    tab1Title: "Flawless turnovers for 5-star reviews",
-    tab1List1: "Hotel-standard deep cleaning between guests.",
-    tab1List2: "Laundry and fresh linen supply management.",
-    tab1List3: "Restocking of essentials (toiletries, coffee).",
+    tab1: "Airbnb Turnover",
+    tab2: "Property Care",
+    tab3: "Owner Updates",
+    tab1Title: "Guest-ready turnovers for 5-star reviews",
+    tab1List1: "Full cleaning after each guest stay — bathrooms, kitchen, bedrooms, floors and common areas.",
+    tab1List2: "Fresh linen setup, towel replacement and laundry coordination.",
+    tab1List3: "Final checklist and photo confirmation before the next check-in.",
     tab2Title: "Complete peace of mind while you're away",
-    tab2List1: "Key holding and guest check-in coordination.",
-    tab2List2: "Emergency maintenance and minor repairs.",
-    tab2List3: "Regular property inspections during low season.",
+    tab2List1: "Key holding and access coordination for cleaners, guests or maintenance.",
+    tab2List2: "Minor maintenance coordination with trusted local providers.",
+    tab2List3: "Regular property inspections during vacant periods or low season.",
     tab3Title: "Stay updated, wherever you are",
-    tab3List1: "Instant WhatsApp updates after every clean.",
-    tab3List2: "Photo reports of property condition.",
-    tab3List3: "Monthly management summaries.",
+    tab3List1: "WhatsApp updates after each turnover or property visit.",
+    tab3List2: "Photo reports showing cleaning completion and property condition.",
+    tab3List3: "Quick alerts for damages, missing items or maintenance issues.",
     mockupTask1: "Change linens",
     mockupTask2: "Sanitize bathrooms",
     mockupTask3: "Restock coffee",
@@ -834,7 +834,7 @@ const App = () => {
                   {lang === 'en' ? 'Send your property details' : 'Envía los detalles de tu propiedad'}
                 </h4>
                 <p className="how-step-desc">
-                  {lang === 'en' ? 'Tell us your location, number of rooms and rental platform.' : 'Cuéntanos tu ubicación, número de habitaciones y plataforma de alquiler.'}
+                  {lang === 'en' ? 'Tell us your location, property type, number of bedrooms and rental platform.' : 'Cuéntanos tu ubicación, número de habitaciones y plataforma de alquiler.'}
                 </p>
               </div>
               <div className="how-step">
@@ -843,16 +843,16 @@ const App = () => {
                   {lang === 'en' ? 'We build your checklist' : 'Creamos tu lista de verificación'}
                 </h4>
                 <p className="how-step-desc">
-                  {lang === 'en' ? 'We create a custom turnover checklist for your property.' : 'Creamos una lista de verificación personalizada para tu propiedad.'}
+                  {lang === 'en' ? 'We create a custom turnover and property care checklist for your home' : 'Creamos una lista de verificación personalizada para tu propiedad.'}
                 </p>
               </div>
               <div className="how-step">
                 <span className="how-step-num">03</span>
                 <h4 className="how-step-title">
-                  {lang === 'en' ? 'We handle cleaning, laundry & restocking' : 'Nos encargamos de limpieza, lavandería y reposición'}
+                  {lang === 'en' ? 'We coordinate cleaning, laundry & restocking' : 'Nos encargamos de limpieza, lavandería y reposición'}
                 </h4>
                 <p className="how-step-desc">
-                  {lang === 'en' ? 'Our local team coordinates every visit, every time.' : 'Nuestro equipo local coordina cada visita, cada vez.'}
+                  {lang === 'en' ? 'Our local team handles each scheduled visit with your property checklist.' : 'Nuestro equipo local coordina cada visita, cada vez.'}
                 </p>
               </div>
               <div className="how-step">
@@ -861,7 +861,7 @@ const App = () => {
                   {lang === 'en' ? 'You receive photo confirmation' : 'Recibes confirmación fotográfica'}
                 </h4>
                 <p className="how-step-desc">
-                  {lang === 'en' ? 'After each turnover you get a WhatsApp report with photos.' : 'Después de cada servicio recibes un informe por WhatsApp con fotos.'}
+                  {lang === 'en' ? 'After each turnover, you receive a WhatsApp update with photos and any important notes.' : 'Después de cada servicio recibes un informe por WhatsApp con fotos.'}
                 </p>
               </div>
             </div>
@@ -877,15 +877,15 @@ const App = () => {
               <div className="package-card">
                 <h3 className="package-title">{lang === 'en' ? 'Turnover Only' : 'Solo Limpieza'}</h3>
                 <p className="package-desc">
-                  {lang === 'en' ? 'For hosts who need reliable guest-ready cleaning.' : 'Para anfitriones que necesitan una limpieza de cambio fiable.'}
+                  {lang === 'en' ? 'For hosts who need reliable guest-ready cleaning between stays.' : 'Para anfitriones que necesitan una limpieza de cambio fiable.'}
                 </p>
                 <div className="package-divider"></div>
                 <div className="package-includes-title">{lang === 'en' ? 'Includes:' : 'Incluye:'}</div>
                 <ul className="package-features">
                   <li><CheckIcon /> {lang === 'en' ? 'Post-guest cleaning' : 'Limpieza post-huésped'}</li>
-                  <li><CheckIcon /> {lang === 'en' ? 'Bed change' : 'Cambio de sábanas'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Bed and towel setup' : 'Cambio de sábanas y toallas'}</li>
                   <li><CheckIcon /> {lang === 'en' ? 'Bathroom & kitchen reset' : 'Desinfección de baño y cocina'}</li>
-                  <li><CheckIcon /> {lang === 'en' ? 'Photo confirmation' : 'Confirmación fotográfica'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Final photo confirmation' : 'Confirmación fotográfica'}</li>
                 </ul>
                 <a 
                   href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000'}?text=${encodeURIComponent(lang === 'en' ? "Hi, I'm interested in the Turnover Only service for my property." : "Hola, estoy interesado en el servicio de Solo Limpieza para mi propiedad.")}`} 
@@ -902,15 +902,15 @@ const App = () => {
                 <span className="package-badge">{lang === 'en' ? 'Most Popular' : 'Más Popular'}</span>
                 <h3 className="package-title">Airbnb Care</h3>
                 <p className="package-desc">
-                  {lang === 'en' ? 'For owners who want cleaning, laundry and restocking handled.' : 'Para propietarios que desean externalizar limpieza, lavandería y reposición.'}
+                  {lang === 'en' ? 'For owners who want cleaning, laundry and restocking coordinated.' : 'Para propietarios que desean externalizar limpieza, lavandería y reposición.'}
                 </p>
                 <div className="package-divider"></div>
                 <div className="package-includes-title">{lang === 'en' ? 'Includes:' : 'Incluye:'}</div>
                 <ul className="package-features">
-                  <li><CheckIcon /> {lang === 'en' ? 'Everything in Turnover' : 'Todo lo de Solo Limpieza'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Everything in Turnover Only' : 'Todo lo de Solo Limpieza'}</li>
                   <li><CheckIcon /> {lang === 'en' ? 'Laundry coordination' : 'Coordinación de lavandería'}</li>
                   <li><CheckIcon /> {lang === 'en' ? 'Essentials restocking' : 'Reposición de esenciales'}</li>
-                  <li><CheckIcon /> {lang === 'en' ? 'Turnover checklist' : 'Lista de verificación'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Custom turnover checklist' : 'Lista de verificación personalizada'}</li>
                   <li><CheckIcon /> {lang === 'en' ? 'WhatsApp photo report' : 'Informe fotográfico por WhatsApp'}</li>
                 </ul>
                 <a 
@@ -936,7 +936,7 @@ const App = () => {
                   <li><CheckIcon /> {lang === 'en' ? 'Property inspections' : 'Inspección de propiedad'}</li>
                   <li><CheckIcon /> {lang === 'en' ? 'Maintenance coordination' : 'Coordinación de mantenimiento'}</li>
                   <li><CheckIcon /> {lang === 'en' ? 'Guest-ready checks' : 'Control de puesta a punto'}</li>
-                  <li><CheckIcon /> {lang === 'en' ? 'Monthly owner summary' : 'Resumen mensual de gestión'}</li>
+                  <li><CheckIcon /> {lang === 'en' ? 'Damage or issue alerts' : 'Alertas de daños o problemas'}</li>
                 </ul>
                 <a 
                   href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000'}?text=${encodeURIComponent(lang === 'en' ? "Hi, I'm interested in the Full Property Care service for my property." : "Hola, estoy interesado en el servicio de Cuidado Completo para mi propiedad.")}`} 

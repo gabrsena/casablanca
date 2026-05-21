@@ -19,9 +19,9 @@ export const CTASection: React.FC<CTASectionProps> = ({ cityName, whatsappMessag
     displayWhatsAppUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(whatsappMessageOverride)}`;
   } else if (cityName) {
     if (lang === 'en') {
-      displayWhatsAppUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(`Hi! I'd like to talk to someone about managing my property in ${cityName}.`)}`;
+      displayWhatsAppUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(`Hi, I'm interested in Airbnb cleaning in ${cityName}.`)}`;
     } else {
-      displayWhatsAppUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(`¡Hola! Me gustaría hablar con alguien para gestionar mi propiedad en ${cityName}.`)}`;
+      displayWhatsAppUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(`Hola, estoy interesado en la limpieza de Airbnb en ${cityName}.`)}`;
     }
   } else {
     if (lang === 'en') {

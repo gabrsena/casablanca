@@ -12,26 +12,20 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ cityName }) =>
   const { lang } = useTranslation();
   const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000';
 
-  const suffixEn = cityName ? ` in ${cityName}` : ' for my property';
-  const suffixEs = cityName ? ` en ${cityName}` : ' para mi propiedad';
+  const msg1 = cityName 
+    ? (lang === 'en' ? `Hi, I'm interested in Airbnb cleaning in ${cityName}.` : `Hola, estoy interesado en la limpieza de Airbnb en ${cityName}.`)
+    : (lang === 'en' ? 'Hi, I\'m interested in the Turnover Only service for my property.' : 'Hola, estoy interesado en el servicio de Solo Limpieza para mi propiedad.');
+  const link1 = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg1)}`;
 
-  const link1 = `https://wa.me/${waNumber}?text=${encodeURIComponent(
-    lang === 'en' 
-      ? `Hi, I'm interested in the Turnover Only service${suffixEn}.` 
-      : `Hola, estoy interesado en el servicio de Solo Limpieza${suffixEs}.`
-  )}`;
+  const msg2 = cityName 
+    ? (lang === 'en' ? `Hi, I'm interested in Airbnb cleaning in ${cityName}.` : `Hola, estoy interesado en la limpieza de Airbnb en ${cityName}.`)
+    : (lang === 'en' ? 'Hi, I\'m interested in the Airbnb Care service for my property.' : 'Hola, estoy interesado en el servicio de Airbnb Care para mi propiedad.');
+  const link2 = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg2)}`;
 
-  const link2 = `https://wa.me/${waNumber}?text=${encodeURIComponent(
-    lang === 'en' 
-      ? `Hi, I'm interested in the Airbnb Care service${suffixEn}.` 
-      : `Hola, estoy interesado en el servicio de Airbnb Care${suffixEs}.`
-  )}`;
-
-  const link3 = `https://wa.me/${waNumber}?text=${encodeURIComponent(
-    lang === 'en' 
-      ? `Hi, I'm interested in the Full Property Care service${suffixEn}.` 
-      : `Hola, estoy interesado en el servicio de Cuidado Completo${suffixEs}.`
-  )}`;
+  const msg3 = cityName 
+    ? (lang === 'en' ? `Hi, I'm interested in Airbnb cleaning in ${cityName}.` : `Hola, estoy interesado en la limpieza de Airbnb en ${cityName}.`)
+    : (lang === 'en' ? 'Hi, I\'m interested in the Full Property Care service for my property.' : 'Hola, estoy interesado en el servicio de Cuidado Completo para mi propiedad.');
+  const link3 = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg3)}`;
 
   return (
     <section className="packages-section fade-in-section">
@@ -58,7 +52,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ cityName }) =>
               rel="noreferrer" 
               className="btn-primary package-btn"
             >
-              {lang === 'en' ? 'Request on WhatsApp' : 'Solicitar en WhatsApp'}
+              {cityName 
+                ? (lang === 'en' ? `Request in ${cityName}` : `Solicitar en ${cityName}`)
+                : (lang === 'en' ? 'Request on WhatsApp' : 'Solicitar en WhatsApp')}
             </a>
           </div>
 
@@ -84,7 +80,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ cityName }) =>
               rel="noreferrer" 
               className="btn-primary package-btn"
             >
-              {lang === 'en' ? 'Request on WhatsApp' : 'Solicitar en WhatsApp'}
+              {cityName 
+                ? (lang === 'en' ? `Request in ${cityName}` : `Solicitar en ${cityName}`)
+                : (lang === 'en' ? 'Request on WhatsApp' : 'Solicitar en WhatsApp')}
             </a>
           </div>
 
@@ -109,7 +107,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ cityName }) =>
               rel="noreferrer" 
               className="btn-primary package-btn"
             >
-              {lang === 'en' ? 'Request on WhatsApp' : 'Solicitar en WhatsApp'}
+              {cityName 
+                ? (lang === 'en' ? `Request in ${cityName}` : `Solicitar en ${cityName}`)
+                : (lang === 'en' ? 'Request on WhatsApp' : 'Solicitar en WhatsApp')}
             </a>
           </div>
         </div>

@@ -23,7 +23,7 @@ const CITIES = [
 ];
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ currentCity }) => {
-  const { t } = useTranslation();
+  const { lang, t } = useTranslation();
 
   const getActiveStyle = (cityName: string) => {
     if (currentCity && cityName.toLowerCase() === currentCity.toLowerCase()) {
@@ -38,7 +38,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ currentCity }) => {
         <div className="about-text">
           <span className="ownership-label">{t.aboutLabel}</span>
           <h2 className="section-headline">{t.aboutTitle}</h2>
-          <p>{t.aboutText}</p>
+          <p>
+            {currentCity && currentCity.toLowerCase() !== 'costa blanca'
+              ? (lang === 'en'
+                  ? `Since 2017, our background in property services in the United States taught us the importance of punctuality, communication and attention to detail. We know ${currentCity} and the Costa Blanca, and we bring that same operational standard to keep your ${currentCity} property running smoothly.`
+                  : `Desde 2017, nuestra trayectoria en servicios de propiedad en los Estados Unidos nos enseñó la importancia de la puntualidad, la comunicación y la atención al detalle. Conocemos ${currentCity} y la Costa Blanca, y aplicamos ese mismo estándar operativo para que tu propiedad en ${currentCity} funcione sin problemas.`)
+              : t.aboutText}
+          </p>
           <p style={{ fontSize: '15px', color: '#1A56DB', fontWeight: '700', marginTop: '16px' }}>{t.aboutSubline}</p>
           
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '24px' }}>

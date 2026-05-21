@@ -52,13 +52,13 @@ export const Footer = () => {
           <div className="footer-col">
             <h5>Areas We Serve</h5>
             <ul>
-              <li><Link href="/airbnb-cleaning-javea">Airbnb Cleaning in Javea</Link></li>
-              <li><Link href="/airbnb-cleaning-calpe">Airbnb Cleaning in Calpe</Link></li>
-              <li><Link href="/airbnb-cleaning-denia">Airbnb Cleaning in Denia</Link></li>
-              <li><Link href="/airbnb-cleaning-alicante">Airbnb Cleaning in Alicante</Link></li>
-              <li><Link href="/airbnb-cleaning-torrevieja">Airbnb Cleaning in Torrevieja</Link></li>
-              <li><Link href="/airbnb-cleaning-benidorm">Airbnb Cleaning in Benidorm</Link></li>
-              <li><Link href="/holiday-home-care-costa-blanca">Holiday Home Care in Costa Blanca</Link></li>
+              <li><Link href="/airbnb-cleaning-javea">Javea</Link></li>
+              <li><Link href="/airbnb-cleaning-calpe">Calpe</Link></li>
+              <li><Link href="/airbnb-cleaning-denia">Denia</Link></li>
+              <li><Link href="/airbnb-cleaning-alicante">Alicante</Link></li>
+              <li><Link href="/airbnb-cleaning-torrevieja">Torrevieja</Link></li>
+              <li><Link href="/airbnb-cleaning-benidorm">Benidorm</Link></li>
+              <li><Link href="/holiday-home-care-costa-blanca">Holiday Home Care</Link></li>
             </ul>
           </div>
         </div>
